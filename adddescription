@@ -1,0 +1,12 @@
+import Library from 0x05
+
+transaction(book: String, title: String, shelfnumber: Int) {
+
+  prepare(acct: AuthAccount) {
+ 
+  }
+
+  execute {
+  Library.adddescription(book: book, title: title, shelfnumber: shelfnumber)
+ }
+}
