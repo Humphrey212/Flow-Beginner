@@ -1,0 +1,38 @@
+pub contract Library {
+
+
+   pub let allBooks: [String]
+
+   pub let description: {String: location}
+
+    pub struct location {
+        pub var title: String
+
+        pub var shelfnumber: Int
+
+        init(_title: String, _shelfnumber: Int) {
+            self.title = _title
+            self.shelfnumber = _shelfnumber
+        }
+    }
+   
+    pub fun addBooks(book: String) {
+        self.allBooks.append(book)
+    }
+ pub fun adddescription (book: String, title: String, shelfnumber: Int) {
+    
+         if let existinglocation = self.description[book] {
+            
+            self.description[book] = location(_title: title, _shelfnumber: shelfnumber)
+        } else {
+            
+            self.description[book] = location(_title: title, _shelfnumber: shelfnumber)
+        }
+    }
+    init() {
+        self.allBooks = []
+
+        self.description = {}
+    }
+    
+}
